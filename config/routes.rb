@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  get 'sessions/new'
+  root 'sessions#new'
+
+  resource :sessions
   resource :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
