@@ -70,6 +70,7 @@ GEM
       public_suffix (>= 2.0.2, < 5.0)
     android_key_attestation (0.3.0)
     awrence (1.2.1)
+    bcrypt (3.1.17)
     bindata (2.4.10)
     bindex (0.8.1)
     bootsnap (1.11.1)
@@ -238,6 +239,7 @@ PLATFORMS
   arm64-darwin-21
 
 DEPENDENCIES
+  bcrypt (~> 3.1)
   bootsnap
   capybara
   debug

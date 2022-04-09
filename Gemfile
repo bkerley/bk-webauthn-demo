@@ -72,3 +72,5 @@ group :test do
 end
 
 gem "webauthn", "~> 2.5"
+
+gem "bcrypt", "~> 3.1"
