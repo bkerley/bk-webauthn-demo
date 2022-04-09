@@ -1,2 +1,28 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<h1>sign up</h1>
+<%= form_for @user do |f| %>
+
+<% unless @user.errors.empty? %>
+<h2>problem dog:</h2>
+<ul class="errors">
+  <% @user.errors.full_messages.each do |e| %>
+     <li><%= e %></li>
+     <% end %>
+</ul>
+<% end %>
+
+<p>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+</p>
+<p>
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+</p>
+<p>
+  <%= f.label :password_confirmation %>
+  <%= f.password_field :password_confirmation %>
+</p>
+<p>
+  <%= f.submit %>
+</p>
+<% end %>
