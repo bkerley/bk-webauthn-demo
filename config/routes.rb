@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'credentials/new'
   get 'dashboard/index', as: 'dashboard'
   root 'sessions#new'
 
