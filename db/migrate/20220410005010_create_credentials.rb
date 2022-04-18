@@ -9,6 +9,6 @@ class CreateCredentials < ActiveRecord::Migration[7.0]
 
       t.timestamps
     end
-    add_index :credentials, :name, unique: true
+    add_index :credentials, %i{name user_id}, unique: true
   end
 end
