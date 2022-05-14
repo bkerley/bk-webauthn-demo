@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_04_09_221821) do
+ActiveRecord::Schema[7.0].define(version: 2022_04_10_005010) do
+  create_table "credentials", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.string "name"
+    t.string "public_key"
+    t.integer "sign_count"
+    t.binary "raw_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name", "user_id"], name: "index_credentials_on_name_and_user_id", unique: true
+    t.index ["user_id"], name: "index_credentials_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "password_digest"
@@ -20,4 +32,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_09_221821) do
     t.index ["name"], name: "index_users_on_name", unique: true
   end
 
+  add_foreign_key "credentials", "users"
 end

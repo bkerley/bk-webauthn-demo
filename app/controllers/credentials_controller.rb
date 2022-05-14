@@ -1,6 +1,7 @@
 class CredentialsController < ApplicationController
   def new
     @credential = current_user.credentials.build
+    @webauthn_challenge =
   end
 
   def create
