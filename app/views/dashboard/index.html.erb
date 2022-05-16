@@ -4,3 +4,9 @@
   <%= current_user.name %>
 </p>
 <p><%= link_to 'new credential', new_credential_path %></p>
+<h2>credentials</h2>
+<ul>
+<% current_user.credentials.each do |cred| %>
+  <li><%= cred.name %></li>
+<% end %>
+</ul>

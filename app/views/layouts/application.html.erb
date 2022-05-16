@@ -11,6 +11,14 @@
   </head>
 
   <body>
+    <% unless flash.empty? %>
+      <ul id="flashes">
+        <% flash.each do |cat, entry| %>
+          <li class="flash <%= cat %>"><%= cat %>: <%= entry %></li>
+        <% end %>
+      </ul>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>

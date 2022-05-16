@@ -7,6 +7,6 @@ class User < ApplicationRecord
 
   private
   def set_webauthn_id
-    self.webauthn_id ||= WebAuthn.generate_user_id
+    self.webauthn_id ||= SecureRandom.uuid
   end
 end
